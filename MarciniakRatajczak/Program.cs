@@ -8,15 +8,16 @@ namespace MarciniakRatajczak
 {
     class Program
     {
+        private static int IloscAgentow = 30;
         private static List<IEnumerator<float>> Lista= new List<IEnumerator<float>>(); 
         private static List<Agent> Agents=new List<Agent>();
         static void GenerateRunnables()
         {
-            for (int i = 1; i <31; i++) 
+            for (int i = 0; i <IloscAgentow/3; i++) 
             {
-                if (i % 3 == 0) Agents.Add(new ConstantCountingAgent());
-                else if (i % 3 == 1) Agents.Add(new CountingAgent());
-                else if (i % 3 == 2) Agents.Add(new SineGeneratingAgent());
+                Agents.Add(new ConstantCountingAgent());
+                Agents.Add(new CountingAgent());
+                Agents.Add(new SineGeneratingAgent());
             }
         }
 
@@ -47,10 +48,11 @@ namespace MarciniakRatajczak
                 foreach (IEnumerator<float> Enumerator in Lista)
                 {
                     Enumerator.MoveNext();
-
+                    
                 }
+                
                 Thread.Sleep(100);
-            }
+             }
         }
 
         static void Main(string[] args)
