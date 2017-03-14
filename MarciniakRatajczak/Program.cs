@@ -9,14 +9,14 @@ namespace MarciniakRatajczak
     class Program
     {
         private static List<IEnumerator<float>> Lista; 
-        public const int ThreadCount = 30;
-        public static int Iterator;
+        
+        
         // static Agent[] Agents = new Agent[ThreadCount];
-        public static List<Agent> Agents;
+        public static List<Agent> Agents=new List<Agent>();
         static void GenerateRunnables()
         {
 
-            for (int i = 0; i <=ThreadCount; i++) 
+            for (int i = 1; i <31; i++) 
             {
                 
                 if (i % 3 == 0) Agents.Add(new ConstantCountingAgent());
@@ -25,23 +25,30 @@ namespace MarciniakRatajczak
                
                 
             }
+           
             
         }
         static void RunThreads()
         {
-            Thread[] Threads = new Thread[ThreadCount];
-            for(int i = 0; i < ThreadCount; i++)
+            List<Thread> Threads = new List<Thread>();
+            
+            foreach(Agent Agent in Agents)
             {
-                Threads[i] = new Thread(Agents[i].Run);
-                Threads[i].Start();
+                Threads.Add(new Thread(Agent.Run));
+                
+            }
+           foreach(Thread Thread in Threads)
+            {
+                Thread.Start();
             }
 
         }
         static void RunFibers()
         {
-            foreach ( Agent i in Agents)
+            
+            foreach ( Agent Agent in Agents)
             {
-                Lista.Add( i.CoroutineUpdate());
+                Lista.Add( Agent.CoroutineUpdate());
                 
 
             }
@@ -57,8 +64,8 @@ namespace MarciniakRatajczak
         {
             
             GenerateRunnables();
-            //RunThreads();
-            RunFibers();
+            RunThreads();
+            //RunFibers();
             Console.ReadKey();
         }
     }
