@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 namespace MarciniakRatajczak
 {
-    interface IRunnable<T>
+    interface IRunnable
     {
         void Run();
         IEnumerator <float> CoroutineUpdate();

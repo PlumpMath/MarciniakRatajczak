@@ -10,7 +10,7 @@ namespace MarciniakRatajczak
     {
         private static int IloscAgentow = 30;
         private static List<IEnumerator<float>> Lista= new List<IEnumerator<float>>(); 
-        private static List<Agent> Agents=new List<Agent>();
+        private static List<IRunnable> Agents=new List<IRunnable>();
         static void GenerateRunnables()
         {
             for (int i = 0; i <IloscAgentow/3; i++) 
@@ -52,6 +52,7 @@ namespace MarciniakRatajczak
                 }
                 
                 Thread.Sleep(100);
+                
              }
         }
 

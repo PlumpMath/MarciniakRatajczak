@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 namespace MarciniakRatajczak
 {
-    abstract class Agent : IRunnable<Agent>
+    abstract class Agent : IRunnable
     {
         public IEnumerator<float> a;
         public static int id;
@@ -25,8 +25,8 @@ namespace MarciniakRatajczak
             while (!HasFinished)
             {
                 Update();
-                yield return 0;
-                
+                if (!HasFinished) yield return 0;
+                else yield break;
             }
                      
         }
