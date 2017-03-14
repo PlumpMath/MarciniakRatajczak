@@ -22,7 +22,7 @@ namespace MarciniakRatajczak
             SinVal = Math.Sin(counter);
             if (counter == ID % 10)
             {
-                Console.WriteLine("Output:{0}", SinVal);
+                Console.WriteLine("Sin Output:{0}", SinVal);
                 HasFinished = true;
             }
             else

@@ -16,7 +16,6 @@ namespace MarciniakRatajczak
             {
                 Update();
                 Thread.Sleep(100);
-                                     
             }
         }
         public abstract void Update(); 
@@ -28,7 +27,7 @@ namespace MarciniakRatajczak
                 Update();
                 yield return 0;
             }
-                      
+                     
         }
 
        
