@@ -8,7 +8,7 @@ namespace MarciniakRatajczak
 {
     class Program
     {
-        private static List<IEnumerator<float>> Lista; 
+        private static List<IEnumerator<float>> Lista= new List<IEnumerator<float>>(); 
         
         
         // static Agent[] Agents = new Agent[ThreadCount];
@@ -48,10 +48,11 @@ namespace MarciniakRatajczak
             
             foreach ( Agent Agent in Agents)
             {
-                Lista.Add( Agent.CoroutineUpdate());
+                Lista.Add(Agent.CoroutineUpdate());
                 
 
             }
+
             foreach(IEnumerator<float> j in Lista)
             {
                 j.MoveNext();
@@ -64,8 +65,8 @@ namespace MarciniakRatajczak
         {
             
             GenerateRunnables();
-            RunThreads();
-            //RunFibers();
+            //RunThreads();
+            RunFibers();
             Console.ReadKey();
         }
     }
