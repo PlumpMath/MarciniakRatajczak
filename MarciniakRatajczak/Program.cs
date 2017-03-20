@@ -20,7 +20,7 @@ namespace MarciniakRatajczak
             {
                 RandomNumbers.Add(rnd.Next(0, 100));
             }
-
+            Agents.Add(new SumAgent(334));
 
             /*for (int i = 0; i <IloscAgentow/3; i++) 
             {

@@ -8,16 +8,22 @@ namespace MarciniakRatajczak
 {
     class SumAgent : Agent
     {
+        protected long Sum;
+        private int zakres;
         private static int ID;
-        public SumAgent()
+        public SumAgent(int range)
         {
             id++;
             ID = id;
+            zakres = range;
 
         }
         public override void Update()
         {
-            throw new NotImplementedException();
+            while (!HasFinished)
+            {
+
+            }
         }
     }
 }
