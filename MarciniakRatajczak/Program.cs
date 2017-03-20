@@ -8,6 +8,7 @@ namespace MarciniakRatajczak
 {
     class Program
     {
+        private static bool AllFinished=false;
         private static int IloscAgentow = 30;
         private static List<IEnumerator<float>> Lista= new List<IEnumerator<float>>(); 
         private static List<IRunnable> Agents=new List<IRunnable>();
@@ -43,17 +44,20 @@ namespace MarciniakRatajczak
             {
                 Lista.Add(Agent.CoroutineUpdate());
             }
-            while (true)
+            while (!Agents.All(a => a.HasFinished))
             {
+                
                 foreach (IEnumerator<float> Enumerator in Lista)
                 {
                     Enumerator.MoveNext();
                     
                 }
-                
+               
                 Thread.Sleep(100);
+              
+                    
                 
-             }
+            }
         }
 
         static void Main(string[] args)

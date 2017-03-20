@@ -10,7 +10,8 @@ namespace MarciniakRatajczak
     {
         void Run();
         IEnumerator <float> CoroutineUpdate();
-      
+        bool HasFinished { get;  }
+
     }
 
     
