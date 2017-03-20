@@ -8,6 +8,13 @@ namespace MarciniakRatajczak
 {
     class SumAgent : Agent
     {
+        private static int ID;
+        public SumAgent()
+        {
+            id++;
+            ID = id;
+
+        }
         public override void Update()
         {
             throw new NotImplementedException();
