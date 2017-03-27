@@ -13,14 +13,20 @@ namespace MarciniakRatajczak
         private static Random rnd = new Random();
         private static List<IEnumerator<float>> Lista= new List<IEnumerator<float>>(); 
         private static List<IRunnable> Agents=new List<IRunnable>();
-        private static List<int> RandomNumbers= new List<int>();
+        public static List<int> RandomNumbers= new List<int>();
+        private static List<int> Sums = new List<int>();
         static void GenerateRunnables()
         {
             for(int i =0; i < 1000; i++)
             {
                 RandomNumbers.Add(rnd.Next(0, 100));
             }
-            Agents.Add(new SumAgent(334));
+
+            for (int i = 0; i<4; i++)
+            {
+                Agents.Add(new SumAgent(RandomNumbers, i*250, i*250+250,1));
+            }
+            Agents.Add(new SumAgent(Sums, 0, 4,2));
 
             /*for (int i = 0; i <IloscAgentow/3; i++) 
             {
