@@ -13,7 +13,7 @@ namespace MarciniakRatajczak
         static int iRandoms = 1000;
         private static Random rnd = new Random();
         private static List<IEnumerator<float>> Lista = new List<IEnumerator<float>>();
-        public String Head { get; set; }
+        
 
         private readonly static List<IRunnable> Agents = new List<IRunnable>();
         public static List<IRunnable> _Agents { get { return Agents; } }
@@ -25,6 +25,11 @@ namespace MarciniakRatajczak
         static void GenerateRunnables()
         {
 
+            //Agents to count words in text
+            Agents.Add(new SplitAgent());
+            
+
+            /*  //Agents to add numbers in list
             for (int i = 0; i < iRandoms; i++)
             {
                 RandomNumbers.Add(rnd.Next(0, 100));
@@ -36,9 +41,9 @@ namespace MarciniakRatajczak
             }
 
             Agents.Add(new HigherLevelSumAgent());
+            */
 
-
-            /* Agents to test threads and coroutines
+            /*// Agents to test threads and coroutines
             for (int i = 0; i <IloscAgentow/3; i++) 
             {
                 Agents.Add(new ConstantCountingAgent());

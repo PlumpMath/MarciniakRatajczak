@@ -10,7 +10,8 @@ namespace MarciniakRatajczak
     class SplitAgent : Agent
     {
         int ID;
-        List<string[]> Strings = new List<string[]>();
+        readonly List<string[]> Strings = new List<string[]>();
+        public List<string[]> _Strings { get { return Strings; } }
         char delimiter= ' ';
         public int textLength;
         

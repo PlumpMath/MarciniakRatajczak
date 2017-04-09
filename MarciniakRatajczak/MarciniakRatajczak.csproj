@@ -53,6 +53,7 @@
     <Compile Include="SineGeneratingAgent.cs" />
     <Compile Include="SplitAgent.cs" />
     <Compile Include="SumAgent.cs" />
+    <Compile Include="TextMapAgent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,6 +10,7 @@ namespace MarciniakRatajczak
     {
         public IEnumerator<float> a;
         public static int id;
+        
         public void Run()
         {
             while(!HasFinished)
