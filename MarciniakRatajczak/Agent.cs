@@ -15,7 +15,7 @@ namespace MarciniakRatajczak
             while(!HasFinished)
             {
                 Update();
-                Thread.Sleep(10);
+                Thread.Sleep(Program.sleepTime);
             }
         }
         public abstract void Update(); 

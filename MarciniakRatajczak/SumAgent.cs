@@ -27,7 +27,7 @@ namespace MarciniakRatajczak
         {
             Sum += numbers[iterator];
             iterator++;
-            if (iterator == range - 1)
+            if (iterator == range)
             {
                 HasFinished = true;
                 Console.WriteLine("SumAgent:{0}={1}",ID, Sum);

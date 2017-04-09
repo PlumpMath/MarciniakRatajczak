@@ -8,7 +8,7 @@ namespace MarciniakRatajczak
 {
     class Program
     {
-
+        public const int sleepTime = 0;
         private static int iAgents = 4;
         static int iRandoms = 1000;
         private static Random rnd = new Random();
@@ -79,18 +79,21 @@ namespace MarciniakRatajczak
                     
                 }
                
-                Thread.Sleep(100);
+                Thread.Sleep(Program.sleepTime);
               
                     
                 
             }
         }
-
+    
         static void Main(string[] args)
         {
             
             GenerateRunnables();
+            
             RunThreads();
+            
+           
             //RunFibers();
             Console.ReadKey();
         }

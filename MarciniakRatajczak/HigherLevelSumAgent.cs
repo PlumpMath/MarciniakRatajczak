@@ -21,7 +21,7 @@ namespace MarciniakRatajczak
         public override void Update()
         {
             
-            Thread.Sleep(1000);
+            Thread.Sleep(Program.sleepTime*300);
             
             if (Agents.Where(a=>a.GetType()==typeof(SumAgent)).All (a => a.HasFinished))
             {
