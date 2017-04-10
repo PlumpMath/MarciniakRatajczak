@@ -10,16 +10,24 @@ namespace MarciniakRatajczak
     {
 
         int ID;
-        List<string[]> Strings = new List<string[]>();
-
-        public TextMapAgent()
+        int iterator=0;
+        string[] Strings;
+        int textLength;
+        Dictionary<string, int> Dict = new Dictionary<string, int>();
+        public TextMapAgent(int nr)
         {
+            
             ID = ++id;
-
+            Strings = SplitAgent._Strings;
+            textLength = SplitAgent.textLength;
+            iterator = nr * textLength / Program.iAgents;
         }
         public override void Update()
         {
-            throw new NotImplementedException();
-        }
+
+            if (Dict.ContainsKey(Strings[iterator])== true)
+            {
+
+            }
     }
 }

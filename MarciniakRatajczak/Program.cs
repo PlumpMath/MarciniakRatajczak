@@ -9,7 +9,7 @@ namespace MarciniakRatajczak
     class Program
     {
         public const int sleepTime = 0;
-        private static int iAgents = 4;
+        public const int iAgents = 4;
         static int iRandoms = 1000;
         private static Random rnd = new Random();
         private static List<IEnumerator<float>> Lista = new List<IEnumerator<float>>();
@@ -27,7 +27,10 @@ namespace MarciniakRatajczak
 
             //Agents to count words in text
             Agents.Add(new SplitAgent());
-            
+            for(int i=0; i<iAgents; i++)
+            {
+                Agents.Add(new TextMapAgent(i));
+            }
 
             /*  //Agents to add numbers in list
             for (int i = 0; i < iRandoms; i++)
