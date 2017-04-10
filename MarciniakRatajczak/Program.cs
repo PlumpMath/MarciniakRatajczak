@@ -21,6 +21,7 @@ namespace MarciniakRatajczak
         private readonly static List<int> RandomNumbers = new List<int>();
         public static List<int> _RandomNumbers { get { return RandomNumbers; } }
         
+
         
         static void GenerateRunnables()
         {

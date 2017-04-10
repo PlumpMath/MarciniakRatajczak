@@ -10,8 +10,8 @@ namespace MarciniakRatajczak
     class SplitAgent : Agent
     {
         int ID;
-        static readonly List<string[]> Strings = new List<string[]>();
-        public static List<string[]> _Strings { get { return Strings; } }
+        static List<string> Strings;
+        public static List<string> _Strings { get { return Strings; } }
         char delimiter= ' ';
         public static int textLength;
         
@@ -24,7 +24,7 @@ namespace MarciniakRatajczak
                 using (StreamReader sr = new StreamReader("TestFile.txt"))
                 {
                     string Text = sr.ReadToEnd();
-                    Strings.Add(Text.Split(delimiter));
+                    Strings= Text.Split(delimiter).ToList();
 
                 }
             }
